@@ -4,6 +4,14 @@
     height: 45px;
     background-color: rgb(25, 33, 38);
     border-bottom: 1px solid #000;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 3;
+    }
 
     .container {
       display: flex;
@@ -18,12 +26,32 @@
       background: url('../../../assets/img/logo-mobile.svg') center no-repeat;
       background-size: contain;
 
+      @media (min-width: 768px) {
+        width: 115px;
+        height: 20px;
+        background: url('../../../assets/img/logo.svg') center no-repeat;
+        background-size: contain;
+      }
     }
 
     &__currency {
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      @media (min-width: 768px) {
+        justify-content: flex-start;
+        position: fixed;
+        top: 45px;
+        left: 0;
+        z-index: 2;
+        width: 260px;
+        height: 45px;
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+        background-color: rgb(25, 33, 38);
+        padding: 0 28px;
+      }
 
       &-control {
         display: inline-block;
@@ -32,6 +60,10 @@
         background: url('../../../assets/img/currency-control.svg') center no-repeat;
         background-size: contain;
         margin-right: 5px;
+
+        @media (min-width: 768px) {
+          margin-right: 10px;
+        }
       }
 
       &-text {
@@ -50,6 +82,12 @@
         border-image: initial;
         border-width: 0 2px 2px 0;
 
+        @media (min-width: 768px) {
+          position: absolute;
+          right: 28px;
+          top: 50%;
+          transform: rotate(45deg) translateY(-50%);
+        }
       }
     }
 

@@ -5,8 +5,8 @@
     background-color: rgb(25, 33, 38);
     border-bottom: 1px solid #000;
 
-    .container {
-
+    @media (min-width: 768px) {
+      //width: 65%;
     }
 
     &-list {
@@ -14,15 +14,33 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      max-width: 450px;
 
       &__item {
         text-align: center;
+
+        @media (min-width: 768px) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 10px;
+        }
+
+        &:last-child {
+          @media (min-width: 768px) {
+            margin-right: 0;
+          }
+        }
 
         &-title {
           color: #fff;
           font-size: 13px;
           font-weight: 700;
           letter-spacing: 1px;
+
+          @media (min-width: 768px) {
+            margin-right: 10px;
+          }
 
           &--green {
             color: rgb(68, 190, 36);
@@ -32,6 +50,11 @@
         &-text {
           font-size: 11px;
           color: rgba(255, 255, 255, 0.4);
+
+          @media (min-width: 768px) {
+            text-align: left;
+            line-height: 1.6;
+          }
         }
       }
     }
