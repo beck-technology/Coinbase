@@ -1,0 +1,69 @@
+:host {
+
+  .header {
+    height: 45px;
+    background-color: rgb(25, 33, 38);
+    border-bottom: 1px solid #000;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px 0 28px;
+    }
+
+    &__logo {
+      width: 19px;
+      height: 31px;
+      background: url('../../../assets/img/logo-mobile.svg') center no-repeat;
+      background-size: contain;
+
+    }
+
+    &__currency {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &-control {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        background: url('../../../assets/img/currency-control.svg') center no-repeat;
+        background-size: contain;
+        margin-right: 5px;
+      }
+
+      &-text {
+        color: #fff;
+        font-size: 14px;
+        margin-right: 10px;
+      }
+
+      &-arrow {
+        display: inline-block;
+        transform: rotate(45deg);
+        margin-bottom: 2px;
+        padding: 2px;
+        border-style: solid;
+        border-color: rgb(255, 255, 255);
+        border-image: initial;
+        border-width: 0 2px 2px 0;
+
+      }
+    }
+
+    &__button {
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      background-color: rgb(21, 35, 44);
+
+      &-link {
+        display: inline-block;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.4);
+        padding: 3px 40px;
+      }
+    }
+  }
+
+}
