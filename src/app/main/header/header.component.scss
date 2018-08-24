@@ -38,6 +38,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      cursor: pointer;
 
       @media (min-width: 768px) {
         justify-content: flex-start;
@@ -55,9 +56,9 @@
 
       &-control {
         display: inline-block;
-        width: 15px;
-        height: 15px;
-        background: url('../../../assets/img/currency-control.svg') center no-repeat;
+        width: 21px;
+        height: 21px;
+        background: url('../../../assets/img/bitcoin.svg') center no-repeat;
         background-size: contain;
         margin-right: 5px;
 

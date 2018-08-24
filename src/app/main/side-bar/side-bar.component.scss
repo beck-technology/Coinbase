@@ -72,6 +72,8 @@
       &__control {
         background: rgb(92, 101, 107);
         width: 40%;
+        transition: all .3s ease-out;
+        cursor: pointer;
 
         &.green {
           background: rgb(68, 190, 36);
@@ -106,6 +108,8 @@
         line-height: 25px;
         color: rgb(92, 101, 107);
         border-bottom: 2px solid rgb(92, 101, 107);
+        transition: all .3s ease-out;
+        cursor: pointer;
 
         &.active {
           color: #fff;
@@ -205,8 +209,10 @@
           width: 50%;
           height: 25px;
           background: rgb(92, 101, 107);
+          transition: all .3s ease-out;
+          cursor: pointer;
 
-          &:last-child {
+          &.active {
             background: rgb(49, 121, 205);
           }
         }
@@ -233,6 +239,8 @@
 
     &-button {
       margin-bottom: 20px;
+      transition: all .3s ease-out;
+      cursor: pointer;
 
       &.green {
         background: rgb(68, 190, 36);

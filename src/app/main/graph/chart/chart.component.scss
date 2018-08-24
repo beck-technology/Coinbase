@@ -17,19 +17,32 @@
     &-image {
       width: 100%;
       height: calc(100vh - 179px);
-      background: url('../../../../assets/img/chart-desktop.png') 0% 0% no-repeat;
+      background: url('../../../../assets/img/chart.png') 0% 0% no-repeat;
       background-size: cover;
+      transition: all .3s ease-out;        cursor: pointer;
 
       @media (min-width: 768px) {
         height: 400px;
-        background: url('../../../../assets/img/chart.png') 0% 0% no-repeat;
-        background-size: cover;
       }
 
       @media (min-width: 1024px) {
         height: 600px;
-        background: url('../../../../assets/img/chart-desktop.png') 0% 0% no-repeat;
-        background-size: cover;
+      }
+    }
+
+    &-image--desktop {
+      width: 100%;
+      height: calc(100vh - 179px);
+      background: url('../../../../assets/img/chart-desktop.png') 0% 0% no-repeat;
+      background-size: cover;
+      transition: all .3s ease-out;        cursor: pointer;
+
+      @media (min-width: 768px) {
+        height: 400px;
+      }
+
+      @media (min-width: 1024px) {
+        height: 600px;
       }
     }
 
@@ -59,12 +72,13 @@
           border-bottom: 1px solid rgba(233, 233, 233, 0.4);
           color: rgba(233, 233, 233, 0.4);
           padding: 0 0 0 5px;
+          transition: all .3s ease-out;        cursor: pointer;
 
           &:first-child {
             padding: 0 5px 0 0;
           }
 
-          &--active {
+          &.active {
             color: #fff;
             border-bottom-color: #fff;
           }

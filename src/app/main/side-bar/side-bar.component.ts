@@ -10,6 +10,7 @@ export class SideBarComponent implements OnInit {
   tabs = [true, false, false];
   buttons = [true, false];
   advanced = false;
+  executionToggler = true;
 
   constructor() { }
 

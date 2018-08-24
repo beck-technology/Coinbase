@@ -1,4 +1,5 @@
 import {Component, HostListener, OnInit} from '@angular/core';
+import {BehaviorSubject} from 'rxjs';
 
 @Component({
   selector: 'app-main',
@@ -8,6 +9,8 @@ import {Component, HostListener, OnInit} from '@angular/core';
 export class MainComponent implements OnInit {
 
   nav = [true, false, false, false, false];
+  isDropdownVisible = false;
+  selectedCurrency$: BehaviorSubject<any> = new BehaviorSubject({title: 'BTC-USD'});
 
   constructor() { }
 
@@ -29,4 +32,12 @@ export class MainComponent implements OnInit {
     this.nav[i] = true;
   }
 
+  toggleDropgown() {
+    this.isDropdownVisible = !this.isDropdownVisible;
+  }
+
+  onSelectCurrency(item) {
+    this.selectedCurrency$.next(item);
+    this.toggleDropgown();
+  }
 }
