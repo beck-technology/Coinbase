@@ -2,5 +2,9 @@
 
   .graph {
     overflow-y: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
   }
 }
