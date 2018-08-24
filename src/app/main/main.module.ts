@@ -6,9 +6,11 @@ import { HeaderComponent } from './header/header.component';
 import { StatusBarComponent } from './status-bar/status-bar.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { GraphComponent } from './graph/graph.component';
-import { TableComponent } from './graph/table/table.component';
+import { TableOrdersComponent } from './graph/table-orders/table-orders.component';
+import { TableTradesComponent } from './graph/table-trades/table-trades.component';
 import { ChartComponent } from './graph/chart/chart.component';
 import { OrdersComponent } from './graph/orders/orders.component';
+
 
 @NgModule({
   imports: [
@@ -23,7 +25,8 @@ import { OrdersComponent } from './graph/orders/orders.component';
     StatusBarComponent,
     SideBarComponent,
     GraphComponent,
-    TableComponent,
+    TableOrdersComponent,
+    TableTradesComponent,
     ChartComponent,
     OrdersComponent,
   ]

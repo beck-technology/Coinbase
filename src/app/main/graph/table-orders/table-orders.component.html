@@ -2,10 +2,10 @@
   <div class="table-order">
     <div class="table-header">
       <div class="table-header__title">Order Book</div>
-      <!--<ul class="table-header__control">-->
-        <!--<li class="table-header__control-item table-header__control-item&#45;&#45;active">Price Chart</li>-->
-        <!--<li class="table-header__control-item">Depth Chart</li>-->
-      <!--</ul>-->
+      <ul class="table-header__control">
+        <li class="table-header__control-item table-header__control-item--active">Order Book</li>
+        <li class="table-header__control-item">Trade History</li>
+      </ul>
     </div>
     <div class="table-content">
       <div class="table-content__row heading">
@@ -48,40 +48,6 @@
         </div>
         <div class="table-content__col">
           {{row.mySize}}
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="table-trade">
-    <div class="table-header">
-      <div class="table-header__title">Trade History</div>
-      <!--<ul class="table-header__control">-->
-      <!--<li class="table-header__control-item table-header__control-item&#45;&#45;active">Price Chart</li>-->
-      <!--<li class="table-header__control-item">Depth Chart</li>-->
-      <!--</ul>-->
-    </div>
-    <div class="table-content">
-      <div class="table-content__row heading">
-        <div class="table-content__col">
-          Trade Size
-        </div>
-        <div class="table-content__col">
-          Price (EUR)
-        </div>
-        <div class="table-content__col">
-          Time
-        </div>
-      </div>
-      <div class="table-content__row" *ngFor="let row of tradesTable">
-        <div class="table-content__col">
-          {{row.tradeSize}}
-        </div>
-        <div class="table-content__col" [ngClass]="row.priceDynamic">
-          {{row.price}}
-        </div>
-        <div class="table-content__col dark">
-          {{row.time}}
         </div>
       </div>
     </div>

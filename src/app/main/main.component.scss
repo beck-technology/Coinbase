@@ -25,7 +25,9 @@
 
     .content {
       @media (min-width: 768px) {
-        width: calc(100% - 260px)
+        width: calc(100% - 260px);
+        height: calc(100vh - 45px);
+        background-color: rgb(21, 35, 44);
       }
     }
   }
