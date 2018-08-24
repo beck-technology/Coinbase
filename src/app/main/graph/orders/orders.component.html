@@ -1,9 +1,9 @@
-<div class="orders">
+<div class="orders" *ngIf="tablesToggler">
   <div class="orders-header">
     <div class="orders-header__title">Open Orders</div>
     <ul class="orders-header__control">
-    <li class="orders-header__control-item orders-header__control-item--active">Open</li>
-    <li class="orders-header__control-item">Fills</li>
+    <li class="orders-header__control-item" [class.active]="tablesToggler" (click)="tablesToggler = !tablesToggler">Open</li>
+    <li class="orders-header__control-item" [class.active]="!tablesToggler" (click)="tablesToggler = !tablesToggler">Fills</li>
     </ul>
   </div>
   <div class="orders-content">
@@ -25,6 +25,38 @@
       </div>
       <div class="orders-content__col">
         Status
+      </div>
+    </div>
+    <div class="orders-content__row empty">
+      No orders to show
+    </div>
+  </div>
+</div>
+
+<div class="orders" *ngIf="!tablesToggler">
+  <div class="orders-header">
+    <div class="orders-header__title">Fills</div>
+    <ul class="orders-header__control">
+      <li class="orders-header__control-item" [class.active]="tablesToggler" (click)="tablesToggler = !tablesToggler">Open</li>
+      <li class="orders-header__control-item" [class.active]="!tablesToggler" (click)="tablesToggler = !tablesToggler">Fills</li>
+    </ul>
+  </div>
+  <div class="orders-content">
+    <div class="orders-content__row heading">
+      <div class="orders-content__col col5">
+        Side
+      </div>
+      <div class="orders-content__col col5">
+        Size (BTC)
+      </div>
+      <div class="orders-content__col col5">
+        Price (EUR)
+      </div>
+      <div class="orders-content__col col5">
+        Fee (EUR)
+      </div>
+      <div class="orders-content__col col5">
+        Time
       </div>
     </div>
     <div class="orders-content__row empty">

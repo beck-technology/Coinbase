@@ -48,12 +48,13 @@
     }
 
     &-content {
-      max-height: calc(100vh - 179px);
+      height: calc(100vh - 179px);
       overflow-y: auto;
       background-color: rgb(21,35,44);
       color: rgb(233, 233, 233);
 
       @media (min-width: 768px) {
+        height: 250px;
         max-height: 250px;
       }
 

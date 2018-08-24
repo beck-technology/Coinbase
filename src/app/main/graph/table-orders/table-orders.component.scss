@@ -25,6 +25,11 @@
       }
     }
 
+    &-trade {
+      width: 100%;
+      border-right: 1px solid #000;
+    }
+
     &-header {
       display: flex;
       justify-content: space-between;
@@ -63,7 +68,7 @@
             padding: 0 5px 0 0;
           }
 
-          &--active {
+          &.active {
             color: #fff;
             border-bottom-color: #fff;
           }
@@ -72,12 +77,13 @@
     }
 
     &-content {
-      max-height: calc(100vh - 179px);
+      height: calc(100vh - 179px);
       overflow-y: auto;
       background-color: rgb(21,35,44);
       color: rgb(233, 233, 233);
 
       @media (min-width: 768px) {
+        height: 250px;
         max-height: 250px;
       }
 
@@ -117,6 +123,38 @@
 
         &.red {
           color: rgb(246, 102, 57);
+        }
+
+        &.up {
+          color: rgb(68, 190, 36);
+          padding-right: 22px;
+          position: relative;
+
+          &:after {
+            content: '\2197';
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+
+        &.down {
+          color: rgb(246, 102, 57);
+          padding-right: 22px;
+          position: relative;
+
+          &:after {
+            content: '\2198';
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+
+        &.dark {
+          color: rgba(233, 233, 233, 0.4);
         }
       }
     }
