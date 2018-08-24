@@ -10,6 +10,7 @@ import { TableOrdersComponent } from './graph/table-orders/table-orders.componen
 import { TableTradesComponent } from './graph/table-trades/table-trades.component';
 import { ChartComponent } from './graph/chart/chart.component';
 import { OrdersComponent } from './graph/orders/orders.component';
+import { NavComponent } from './nav/nav.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { OrdersComponent } from './graph/orders/orders.component';
     TableTradesComponent,
     ChartComponent,
     OrdersComponent,
+    NavComponent,
   ]
 })
 export class MainModule { }

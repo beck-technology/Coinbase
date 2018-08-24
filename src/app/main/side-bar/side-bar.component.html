@@ -13,26 +13,76 @@
   <div class="side-order">
     <div class="side-order__title">Order Form</div>
     <div class="side-order__controls">
-      <div class="side-order__control side-order__control--green">
-        <a href="" class="side-order__control-link">Buy</a>
+      <div class="side-order__control" [class.green]="buttons[0]" (click)="clickButton(0)">
+        <div class="side-order__control-link">Buy</div>
       </div>
-      <div class="side-order__control">
-        <a href="" class="side-order__control-link">Sell</a>
+      <div class="side-order__control" [class.red]="buttons[1]" (click)="clickButton(1)">
+        <div class="side-order__control-link">Sell</div>
       </div>
     </div>
   </div>
 
   <ul class="side-tabs">
-    <li class="side-tabs__control side-tabs__control--active">Market</li>
-    <li class="side-tabs__control">Limit</li>
-    <li class="side-tabs__control">Stop</li>
+    <li class="side-tabs__control side-tabs__control" [class.active]="tabs[0]" (click)="selectTab(0)">Market</li>
+    <li class="side-tabs__control" [class.active]="tabs[1]" (click)="selectTab(1)">Limit</li>
+    <li class="side-tabs__control" [class.active]="tabs[2]" (click)="selectTab(2)">Stop</li>
   </ul>
 
-  <div class="side-form">
+  <div class="side-form" *ngIf="tabs[0]">
     <div class="side-form__label">Amount</div>
     <div class="side-form__input">
       <div class="side-form__input-field">
         <div class="side-form__input-placeholder">Max</div>
+        <div class="side-form__input-value">0.00</div>
+      </div>
+      <div class="side-form__input-currency">EUR</div>
+    </div>
+  </div>
+
+  <div class="side-form" *ngIf="tabs[1]">
+    <div class="side-form__label">Amount</div>
+    <div class="side-form__input">
+      <div class="side-form__input-field">
+        <div class="side-form__input-placeholder">Max</div>
+        <div class="side-form__input-value">0.00</div>
+      </div>
+      <div class="side-form__input-currency">ETC</div>
+    </div>
+    <div class="side-form__label">Limit Price</div>
+    <div class="side-form__input">
+      <div class="side-form__input-field end">
+        <div class="side-form__input-value">0.00</div>
+      </div>
+      <div class="side-form__input-currency">EUR</div>
+    </div>
+    <div class="side-form__label">Execution</div>
+    <div class="side-form__stripe">
+      <div class="side-form__stripe-item">Post Only</div>
+      <div class="side-form__stripe-item">Allow Taker</div>
+    </div>
+    <div class="side-form__notify">Your order may execute as a maker order or taker order. Learn more</div>
+  </div>
+
+  <div class="side-form" *ngIf="tabs[2]">
+    <div class="side-form__label">Amount</div>
+    <div class="side-form__input">
+      <div class="side-form__input-field">
+        <div class="side-form__input-placeholder">Max</div>
+        <div class="side-form__input-value">0.00</div>
+      </div>
+      <div class="side-form__input-currency">EUR</div>
+    </div>
+    <div class="side-form__label">Stop Price</div>
+    <div class="side-form__input">
+      <div class="side-form__input-field end">
+        <div class="side-form__input-value">0.00</div>
+      </div>
+      <div class="side-form__input-currency">EUR</div>
+    </div>
+    <div class="side-form__label alone" (click)="advanced = !advanced">Advanced</div>
+    <div class="side-form__label" *ngIf="advanced">Limit Price</div>
+    <div class="side-form__input" *ngIf="advanced">
+      <div class="side-form__input-field end">
         <div class="side-form__input-value">0.00</div>
       </div>
       <div class="side-form__input-currency">EUR</div>
@@ -51,16 +101,8 @@
   </ul>
 
   <div class="container">
-    <div class="side-button">
+    <div class="side-button" [class.green]="buttons[0]" [class.red]="buttons[1]">
       <a href="" class="side-button__link">Place buy order</a>
     </div>
   </div>
-
-  <ul class="side-controls">
-    <li class="side-controls__item side-controls__item--active">Trade</li>
-    <li class="side-controls__item">Orders</li>
-    <li class="side-controls__item">Charts</li>
-    <li class="side-controls__item">Book</li>
-    <li class="side-controls__item">History</li>
-  </ul>
 </div>

@@ -1,5 +1,9 @@
 :host {
-  width: 50%;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
 
   @media (min-width: 1024px) {
     width: 300px;
@@ -68,10 +72,14 @@
     }
 
     &-content {
-      max-height: 250px;
+      max-height: calc(100vh - 179px);
       overflow-y: auto;
       background-color: rgb(21,35,44);
       color: rgb(233, 233, 233);
+
+      @media (min-width: 768px) {
+        max-height: 250px;
+      }
 
       @media (min-width: 1024px) {
         height: 600px;

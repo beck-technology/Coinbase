@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideBarComponent implements OnInit {
 
+  tabs = [true, false, false];
+  buttons = [true, false];
+  advanced = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  selectTab(i) {
+    this.tabs = [false, false, false];
+    this.tabs[i] = true;
+  }
+
+  clickButton(i) {
+    this.buttons = [false, false];
+    this.buttons[i] = true;
   }
 
 }

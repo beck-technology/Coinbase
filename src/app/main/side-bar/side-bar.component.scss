@@ -5,6 +5,7 @@
   .side {
     background: rgb(47, 61, 69);
     width: 100%;
+    min-height: calc(100vh - 130px);
 
     @media (min-width: 768px) {
       position: fixed;
@@ -72,8 +73,12 @@
         background: rgb(92, 101, 107);
         width: 40%;
 
-        &--green {
+        &.green {
           background: rgb(68, 190, 36);
+        }
+
+        &.red {
+          background: rgb(239, 79, 27);
         }
 
         &-link {
@@ -102,7 +107,7 @@
         color: rgb(92, 101, 107);
         border-bottom: 2px solid rgb(92, 101, 107);
 
-        &--active {
+        &.active {
           color: #fff;
           border-bottom-color: #fff;
         }
@@ -128,6 +133,19 @@
         color: rgb(233, 233, 233);
         font-size: 11px;
         margin-bottom: 5px;
+
+        &.alone {
+          position: relative;
+          margin-bottom: 15px;
+
+          &:after {
+            content: '\003C';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%) rotateZ(-90deg);
+          }
+        }
       }
 
       &__input {
@@ -136,6 +154,7 @@
         height: 38px;
         background: rgb(92, 101, 107);
         border: 1px solid #000;
+        margin-bottom: 10px;
 
         &-field {
           display: flex;
@@ -143,6 +162,10 @@
           align-items: center;
           width: 100%;
           padding: 0 10px;
+
+          &.end {
+            justify-content: flex-end;
+          }
         }
 
         &-placeholder {
@@ -167,6 +190,31 @@
           border-left: 1px solid #000;
         }
       }
+
+      &__stripe {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+
+        &-item {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+          width: 50%;
+          height: 25px;
+          background: rgb(92, 101, 107);
+
+          &:last-child {
+            background: rgb(49, 121, 205);
+          }
+        }
+      }
+
+      &__notify {
+        color: rgba(255, 255, 255, 0.4);
+      }
     }
 
     &-list {
@@ -184,8 +232,15 @@
     }
 
     &-button {
-      background: rgb(68, 190, 36);
       margin-bottom: 20px;
+
+      &.green {
+        background: rgb(68, 190, 36);
+      }
+
+      &.red {
+        background: rgb(239, 79, 27);
+      }
 
       &__link {
         display: inline-block;
@@ -194,67 +249,6 @@
         text-transform: uppercase;
         text-align: center;
         line-height: 40px;
-      }
-    }
-
-    &-controls {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      z-index: 4;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgb(21, 35, 44);
-      border-top: 1px solid #000;
-
-      @media (min-width: 768px) {
-        width: 90px;
-        height: 44px;
-        top: 0;
-        left: 260px;
-        background-color: rgb(25, 33, 38);
-        border-top: none;
-      }
-
-      &__item {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: rgba(255, 255, 255, 0.4);
-        height: 100%;
-        min-height: 44px;
-        width: 20%;
-        text-transform: uppercase;
-        text-align: center;
-        border-bottom: 2px solid transparent;
-        border-left: 1px solid #000;
-
-        &:first-child {
-          border-left: none;
-
-          @media (min-width: 768px) {
-            border-left: 1px solid #000;
-          }
-        }
-
-        @media (min-width: 768px) {
-          display: none;
-        }
-
-        &--active {
-          border-bottom-color: rgb(49, 121, 205);
-
-          @media (min-width: 768px) {
-            display: flex;
-            width: 100%;
-            border-right: 1px solid #000;
-            color: #fff;
-            text-transform: none;
-            font-size: 12px;
-          }
-        }
       }
     }
   }
